@@ -2,12 +2,13 @@ import {Wrapper} from "./ButtonCounter.styled.ts";
 import {Minus, Plus, ShoppingCartSimple} from "@phosphor-icons/react";
 import React from "react";
 import {UserContext} from "../../Context/UserContextProvider.tsx";
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
 function ButtonCounter({productID, quantity} : {productID: string, quantity: number}) {
     const {addItemInShoppingCart, removeItemInShoppingCart, changeItemAmount} = React.useContext(UserContext)
     const [count, setCount] = React.useState(quantity)
     const Navigate = useNavigate()
+    const {pathname} = useLocation()
     const [error, setError] = React.useState(false)
     React.useEffect(()=>{
         setCount(quantity)
@@ -65,7 +66,7 @@ function ButtonCounter({productID, quantity} : {productID: string, quantity: num
             <Minus onClick={()=> handleCount('minus') } size={18} />
         </Wrapper>
 
-            <ShoppingCartSimple onClick={()=> toCheckout()} size={18} />
+            {pathname !== '/checkout' && <ShoppingCartSimple onClick={()=> toCheckout()} size={18} />}
         </>
     );
 }
