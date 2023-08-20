@@ -99,7 +99,8 @@ function Checkout() {
         Navigate('/checkout/success')
     }
 
-    if(watch('cep').length === 8){
+    if(watch('cep').length === 8 && watch('cep') !== userData.address?.cep){
+        console.log(watch('cep'))
         GetAddress(watch('cep')).then(newAddress=>{
             changeUserLocation(newAddress)
             console.log(newAddress)
