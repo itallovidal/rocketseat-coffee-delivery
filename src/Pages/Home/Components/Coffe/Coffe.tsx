@@ -1,6 +1,5 @@
 import {Footer, TagsWrapper, Wrapper} from "./Coffe.styled.ts";
 import ButtonCounter from "../../../../Global Components/ButtonCounter/ButtonCounter.tsx";
-import {ShoppingCartSimple} from "@phosphor-icons/react";
 import React from "react";
 import {UserContext} from "../../../../Context/UserContextProvider.tsx";
 
@@ -52,7 +51,6 @@ function Coffe({coffee}: CoffeProps) {
             <Footer>
                 <span>R$ {coffee.price}</span>
                 <ButtonCounter quantity={quantity} productID={coffee.id}/>
-                <ShoppingCartSimple size={18} />
             </Footer>
         </Wrapper>
     );

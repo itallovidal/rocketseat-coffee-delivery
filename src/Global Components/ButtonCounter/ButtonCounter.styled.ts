@@ -12,13 +12,13 @@ export const Wrapper = styled.div`
   
   svg{
     cursor: pointer;
-    transition: 200ms;
+    transition: 100ms;
     padding: .5rem;
     box-sizing: content-box;
     border-radius: 10px;
     
     &:hover{
-      background:  ${({theme})=>theme['secondary-dark']};
+      background:  ${({theme})=>theme['secondary-dark']} !important;
       color: white;
     }
   }
