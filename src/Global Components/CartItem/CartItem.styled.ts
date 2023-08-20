@@ -44,6 +44,10 @@ export const Wrapper = styled.div`
   .wrapperItemData {
     width: 50%;
     height: 100%;
+    
+    > svg{
+      display: none;
+    }
 
     p {
       margin-bottom: .5rem;

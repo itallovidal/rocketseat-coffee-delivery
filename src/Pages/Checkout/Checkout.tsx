@@ -98,17 +98,16 @@ function Checkout() {
 
         Navigate('/checkout/success')
     }
-    if(!userData.address){
-        if(watch('cep').length === 8){
-            GetAddress(watch('cep')).then(newAddress=>{
-                changeUserLocation(newAddress)
-                console.log(newAddress)
-                setValue('street', newAddress.street, )
-                setValue('district', newAddress.neighborhood)
-                setValue('city', newAddress.city, )
-                setValue('FU', newAddress.state, )
-            } )
-        }
+
+    if(watch('cep').length === 8){
+        GetAddress(watch('cep')).then(newAddress=>{
+            changeUserLocation(newAddress)
+            console.log(newAddress)
+            setValue('street', newAddress.street, )
+            setValue('district', newAddress.neighborhood)
+            setValue('city', newAddress.city, )
+            setValue('FU', newAddress.state, )
+        } )
     }
 
 
