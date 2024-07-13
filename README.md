@@ -3,7 +3,7 @@ CoffeeDelivery é uma plataforma que reúne diversas delícias do mundo do café
 
 Excelente projeto para abordar conceitos do styled components, useContext, react-hook-form, ZOD e como sempre, API. Bom demais!
 
-# Como instalar
+# Setup
 Para utilizar é muito simples:
 ```bash
 npm i
